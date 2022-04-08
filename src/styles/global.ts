@@ -17,11 +17,11 @@ const GlobalStyle = createGlobalStyle`
 
   #root{
     margin: 0 auto;
-    max-width: 450px;
+    max-width: 780px;
     height: 100%;
     background: #fff;
-    position: relative;
-    overflow: hidden;
+   height:100vh;
+    overflow: scroll;
   }
   
   button{
