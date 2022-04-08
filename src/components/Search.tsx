@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
+
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
@@ -15,7 +16,9 @@ const Search = () => {
     setCityName(e.target.value);
   };
 
-  const searchButtonTapped = () => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     dispatch(openweatherLoading());
     dispatch(fetchWeatherData(cityName));
     setCityName('');
@@ -23,7 +26,7 @@ const Search = () => {
 
   return (
     <Container>
-      <SearchWrap>
+      <SearchWrap onSubmit={submitHandler}>
         <SearchBox>
           <input
             type="text"
@@ -32,7 +35,7 @@ const Search = () => {
             onChange={handleCityName}
           />
         </SearchBox>
-        <SearchButton onClick={searchButtonTapped}>
+        <SearchButton>
           <FaSearch />
         </SearchButton>
       </SearchWrap>

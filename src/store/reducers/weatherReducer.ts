@@ -13,7 +13,7 @@ const initialState: WeatherState = {
   error: '',
 };
 
-const WeatherReducer = (
+const weatherReducer = (
   state = initialState,
   action: WeatherDispatchType,
 ): WeatherState => {
@@ -43,4 +43,4 @@ const WeatherReducer = (
   }
 };
 
-export default WeatherReducer;
+export default weatherReducer;
