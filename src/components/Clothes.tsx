@@ -18,7 +18,6 @@ const Clothes: FC<WeatherProps> = ({ data }) => {
   const fall = currentTemp >= 12 && currentTemp < 16;
   const beginWinter = currentTemp >= 10 && currentTemp < 11;
   const earlyWinter = currentTemp >= 6 && currentTemp < 9;
-  //   const winter = currentTemp < 5;
 
   const weatherClothes = () => {
     if (summer) {

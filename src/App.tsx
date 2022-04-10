@@ -20,7 +20,6 @@ const App = () => {
       <Title>
         <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt="" />
       </Title>
-      {/* <Title>Wedy</Title> */}
       <Search />
       {loading ? (
         <Loading>로딩중...</Loading>

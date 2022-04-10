@@ -22,8 +22,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 780px;
     height: 100%;
     background: #fff;
-    height:100vh;
-    /* overflow: scroll; */
+    overflow: hidden;
   }
   
   button{
