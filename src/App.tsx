@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Search from './components/Search';
 import { RootState } from './store';
 import Weather from './components/Weather';
+import Clothes from './components/Clothes';
 
 const App = () => {
   const weatherData = useSelector(
@@ -16,12 +17,20 @@ const App = () => {
 
   return (
     <Container>
-      <Title>Wedy</Title>
+      <Title>
+        <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt="" />
+      </Title>
+      {/* <Title>Wedy</Title> */}
       <Search />
       {loading ? (
-        <Loading>Loading...</Loading>
+        <Loading>로딩중...</Loading>
       ) : (
-        weatherData && <Weather data={weatherData} />
+        weatherData && (
+          <WeatherWrap>
+            <Weather data={weatherData} />
+            <Clothes data={weatherData} />
+          </WeatherWrap>
+        )
       )}
       {error && <p>해당하는 도시가 없습니다.</p>}
     </Container>
@@ -31,18 +40,25 @@ const App = () => {
 export default App;
 
 const Container = styled.div`
-  padding-top: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 `;
 
-const Title = styled.h1`
-  margin: 10px;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 33px;
+const Title = styled.span`
+  height: 50px;
+  img {
+    width: 150px;
+    padding: 0;
+  }
 `;
 
 const Loading = styled.h3``;
+const WeatherWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  height: 400px;
+`;

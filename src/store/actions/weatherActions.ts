@@ -13,7 +13,7 @@ export const fetchWeatherData =
   (city: string) => async (dispatch: Dispatch<WeatherDispatchType>) => {
     try {
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
       );
       const { data } = res;
       dispatch({

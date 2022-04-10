@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Noto+Sans+KR:wght@300;400&display=swap');
  *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
   }
@@ -20,13 +22,21 @@ const GlobalStyle = createGlobalStyle`
     max-width: 780px;
     height: 100%;
     background: #fff;
-   height:100vh;
-    overflow: scroll;
+    height:100vh;
+    /* overflow: scroll; */
   }
   
   button{
     cursor: pointer;
     border: none;
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+  }
+
 `;
 export default GlobalStyle;

@@ -48,7 +48,6 @@ export interface WeatherData {
 
 export interface WeatherState {
   loading: boolean;
-  success: boolean;
   error: string;
   data: WeatherData | null;
 }

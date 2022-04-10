@@ -49,7 +49,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
+  margin-top: 80px;
+  margin-bottom: 50px;
 `;
 
 const SearchWrap = styled.form`
@@ -62,16 +63,18 @@ const SearchBox = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 38px;
 
   input {
     border: 1px solid lightgray;
     background-color: transparent;
-    font-size: 5px;
-    line-height: 1.15;
+    font-size: 15px;
+    line-height: 1.25;
     color: #111;
-    width: 170px;
+    width: 280px;
+    height: 35px;
     padding: 5px;
+    border-radius: 20px;
+    text-indent: 5%;
   }
 
   input::placeholder {
@@ -88,6 +91,6 @@ const SearchButton = styled.button`
   display: flex;
   align-items: center;
   padding-left: 4px;
-  font-size: 1rem;
+  font-size: 15px;
   cursor: pointer;
 `;

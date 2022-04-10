@@ -9,7 +9,6 @@ import {
 const initialState: WeatherState = {
   data: null,
   loading: false,
-  success: false,
   error: '',
 };
 
@@ -20,8 +19,6 @@ const weatherReducer = (
   switch (action.type) {
     case WEATHER_SUCESS:
       return {
-        ...state,
-        success: true,
         loading: false,
         error: '',
         data: action.payload,
@@ -34,7 +31,6 @@ const weatherReducer = (
     case WEATHER_FAIL:
       return {
         ...state,
-        success: false,
         loading: false,
         error: action.payload,
       };
