@@ -13,7 +13,6 @@ const App = () => {
   const loading = useSelector(
     (state: RootState) => state.weatherReducer.loading,
   );
-  const error = useSelector((state: RootState) => state.weatherReducer.error);
 
   return (
     <Container>
@@ -31,7 +30,6 @@ const App = () => {
           </WeatherWrap>
         )
       )}
-      {error && <p>해당하는 도시가 없습니다.</p>}
     </Container>
   );
 };

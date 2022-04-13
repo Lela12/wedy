@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from 'react';
-
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
