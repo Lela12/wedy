@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import Search from './components/Search';
 import { RootState } from './store';
 import Weather from './components/Weather';
 import Clothes from './components/Clothes';
+
+const antIcon = <LoadingOutlined style={{ fontSize: 30 }} spin />;
 
 const App = () => {
   const weatherData = useSelector(
@@ -21,7 +25,9 @@ const App = () => {
       </Title>
       <Search />
       {loading ? (
-        <Loading>로딩중...</Loading>
+        <SpinWrap>
+          <Spin indicator={antIcon} />
+        </SpinWrap>
       ) : (
         weatherData && (
           <WeatherWrap>
@@ -51,7 +57,10 @@ const Title = styled.span`
   }
 `;
 
-const Loading = styled.h3``;
+const SpinWrap = styled.div`
+  padding: 80px;
+`;
+
 const WeatherWrap = styled.div`
   display: flex;
   justify-content: space-between;
