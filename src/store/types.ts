@@ -48,7 +48,6 @@ export interface WeatherData {
 
 export interface WeatherState {
   loading: boolean;
-  error: string;
   data: WeatherData | null;
 }
 
@@ -56,14 +55,9 @@ export interface WeatherLoading {
   type: typeof WEATHER_LOADING;
 }
 
-export interface WeatherFail {
-  type: typeof WEATHER_FAIL;
-  payload: string;
-}
-
 export interface WeatherSuccess {
   type: typeof WEATHER_SUCESS;
   payload: WeatherData;
 }
 
-export type WeatherDispatchType = WeatherLoading | WeatherFail | WeatherSuccess;
+export type WeatherDispatchType = WeatherLoading | WeatherSuccess;
