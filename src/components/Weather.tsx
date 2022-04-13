@@ -59,31 +59,33 @@ const WeatherTemp = styled.div`
 `;
 
 const CityName = styled.h4`
-  font-size: 30px;
+  font-size: 40px;
 `;
 
 const WeatherIcon = styled.span`
   margin-top: 10px;
+  margin-bottom: 30px;
   img {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
   }
 `;
 
 const Temper = styled.h2`
   font-size: 50px;
-  line-height: 50px;
+  margin-bottom: 1px;
 `;
 
 const TempIcon = styled.div`
   position: relative;
-  left: -15px;
+  left: -5px;
   display: flex;
+  font-size: 16px;
 `;
 
 const Icon = styled.div`
   font-size: 20px;
-  padding-left: 10px;
+  padding-left: 5px;
   padding-top: 2px;
 `;
 
