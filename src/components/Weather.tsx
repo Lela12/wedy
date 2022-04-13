@@ -80,7 +80,7 @@ const TempIcon = styled.div`
   position: relative;
   left: -5px;
   display: flex;
-  font-size: 16px;
+  font-size: 17px;
 `;
 
 const Icon = styled.div`

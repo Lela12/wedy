@@ -66,11 +66,11 @@ const SearchBox = styled.div`
   input {
     border: 1px solid lightgray;
     background-color: transparent;
-    font-size: 15px;
-    line-height: 1.25;
+    font-size: 17px;
+    line-height: 1;
     color: #111;
-    width: 280px;
-    height: 35px;
+    width: 330px;
+    height: 45px;
     padding: 5px;
     border-radius: 20px;
     text-indent: 5%;
@@ -90,6 +90,7 @@ const SearchButton = styled.button`
   display: flex;
   align-items: center;
   padding-left: 4px;
-  font-size: 15px;
+  font-size: 20px;
+  opacity: 0.8;
   cursor: pointer;
 `;

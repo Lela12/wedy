@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Noto+Sans+KR:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Noto+Sans+KR:wght@300;400,500,600,700&display=swap');
  *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-    font-weight: 400;
+    font-family: 'Montserrat',sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
   }

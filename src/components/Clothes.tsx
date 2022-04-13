@@ -48,9 +48,8 @@ const Clothes: FC<WeatherProps> = ({ data }) => {
   return (
     <ClothesWrap>
       <ClothesDes>
-        <Title>추천 코디!</Title>
+        <Title>오늘의 코디 추천!</Title>
         <ClothesRecomend>{weatherClothes()}</ClothesRecomend>
-        <Recommend> 입고 나가시는걸 추천해요!</Recommend>
       </ClothesDes>
     </ClothesWrap>
   );
@@ -59,10 +58,10 @@ const Clothes: FC<WeatherProps> = ({ data }) => {
 export default Clothes;
 
 const ClothesWrap = styled.div`
-  margin-top: 80px;
+  margin-top: 60px;
   height: 300px;
   padding: 20px;
-  border: 1px solid lightgray;
+  border: 0.1px solid lightgray;
 `;
 
 const ClothesDes = styled.section`
@@ -72,19 +71,16 @@ const ClothesDes = styled.section`
   flex-direction: column;
   list-style: none;
   margin: auto;
-  line-height: 40px;
+  line-height: 35px;
 `;
 
 const Title = styled.h3`
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 800;
+  color: gray;
 `;
 
-const ClothesRecomend = styled.h3`
-  font-size: 16px;
+const ClothesRecomend = styled.h5`
+  font-size: 22px;
   font-weight: 700;
-  color: red;
-`;
-
-const Recommend = styled.h3`
-  font-size: 15px;
 `;
