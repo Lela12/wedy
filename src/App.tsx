@@ -20,9 +20,7 @@ const App = () => {
 
   return (
     <Container>
-      <Title>
-        <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt="" />
-      </Title>
+      <Title>Wedy</Title>
       <Search />
       {loading ? (
         <SpinWrap>
@@ -49,12 +47,10 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Title = styled.span`
-  height: 50px;
-  img {
-    width: 150px;
-    padding: 0;
-  }
+const Title = styled.h1`
+  margin-top: 20px;
+  font-size: 45px;
+  font-weight: 600;
 `;
 
 const SpinWrap = styled.div`

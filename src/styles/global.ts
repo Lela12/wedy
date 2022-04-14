@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 800px;
     height: 100%;
     background: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   
   button{
