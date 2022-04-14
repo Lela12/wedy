@@ -7,17 +7,15 @@ interface WeatherProps {
 }
 
 const Clothes: FC<WeatherProps> = ({ data }) => {
-  if (!data) return <p> 날씨 정보가 없습니다.</p>;
-
   const currentTemp = data.main.temp;
 
-  const summer = currentTemp >= 27;
-  const beginSummer = currentTemp >= 23 && currentTemp < 26;
-  const earlySummer = currentTemp >= 20 && currentTemp <= 22;
-  const earlyFall = currentTemp >= 17 && currentTemp < 19;
-  const fall = currentTemp >= 12 && currentTemp < 16;
-  const beginWinter = currentTemp >= 10 && currentTemp < 11;
-  const earlyWinter = currentTemp >= 6 && currentTemp < 9;
+  const summer = currentTemp >= 28;
+  const beginSummer = currentTemp >= 23 && currentTemp < 28;
+  const earlySummer = currentTemp >= 20 && currentTemp <= 23;
+  const earlyFall = currentTemp >= 17 && currentTemp < 20;
+  const fall = currentTemp >= 12 && currentTemp < 17;
+  const beginWinter = currentTemp >= 9 && currentTemp < 12;
+  const earlyWinter = currentTemp >= 4 && currentTemp < 9;
 
   const weatherClothes = () => {
     if (summer) {
