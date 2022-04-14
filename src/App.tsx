@@ -47,9 +47,9 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Title = styled.h1`
+const Title = styled.h4`
   margin-top: 20px;
-  font-size: 45px;
+  font-size: 32px;
   font-weight: 600;
 `;
 

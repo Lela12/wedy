@@ -34,12 +34,11 @@ const Clothes: FC<WeatherProps> = ({ data }) => {
       return '자켓, 가디건, 야상, 스타킹, 청바지, 면바지';
     }
     if (beginWinter) {
-      return '자켓, 트렌치 코트, 야상, 니트, 청바지, 스타킹';
+      return '자켓, 트렌치 코트, 니트, 청바지, 스타킹';
     }
     if (earlyWinter) {
       return '코트, 가죽자켓, 히트텍, 니트, 레깅스';
     }
-
     return '패딩, 두꺼운 코트, 목도리, 기모제품';
   };
 
@@ -56,10 +55,10 @@ const Clothes: FC<WeatherProps> = ({ data }) => {
 export default Clothes;
 
 const ClothesWrap = styled.div`
-  margin-top: 60px;
+  margin-top: 30px;
   height: 300px;
   padding: 20px;
-  border: 0.1px solid lightgray;
+  border: 1px solid lightgray;
 `;
 
 const ClothesDes = styled.section`
@@ -72,13 +71,13 @@ const ClothesDes = styled.section`
   line-height: 35px;
 `;
 
-const Title = styled.h3`
-  font-size: 26px;
+const Title = styled.h4`
+  font-size: 23px;
   font-weight: 800;
   color: gray;
 `;
 
 const ClothesRecomend = styled.h5`
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 700;
 `;

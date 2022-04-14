@@ -6,14 +6,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
-    margin: 0;
-    padding: 0;
   }
 
   html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
-    font-size: 12px;
+    font-size: 14px;
     background: #F9F9F9;
   }
 
@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 800px;
     height: 100%;
     background: #fff;
+    position: relative;
     overflow-x: hidden;
   }
   

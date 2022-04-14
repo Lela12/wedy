@@ -29,7 +29,7 @@ const Search = () => {
         <SearchBox>
           <input
             type="text"
-            placeholder="현재 위치를 입력해 주세요"
+            placeholder="현재 위치를 입력해 주세요.  ex) 강남구"
             value={cityName}
             onChange={handleCityName}
           />
@@ -49,7 +49,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 
 const SearchWrap = styled.form`
@@ -66,10 +66,9 @@ const SearchBox = styled.div`
   input {
     border: 1px solid lightgray;
     background-color: transparent;
-    font-size: 17px;
     line-height: 1;
     color: #111;
-    width: 330px;
+    width: 350px;
     height: 45px;
     padding: 5px;
     border-radius: 20px;
