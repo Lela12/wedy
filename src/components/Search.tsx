@@ -68,7 +68,7 @@ const SearchBox = styled.div`
     background-color: transparent;
     line-height: 1;
     color: #111;
-    width: 350px;
+    width: 290px;
     height: 45px;
     padding: 5px;
     border-radius: 20px;
