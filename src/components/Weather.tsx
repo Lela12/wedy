@@ -47,7 +47,7 @@ const WeatherWrap = styled.section`
   flex-direction: column;
   list-style: none;
   margin: auto;
-  line-height: 30px;
+  line-height: 40px;
   padding: 30px;
 `;
 
@@ -59,7 +59,7 @@ const WeatherTemp = styled.div`
 `;
 
 const CityName = styled.h4`
-  font-size: 25px;
+  font-size: 28px;
 `;
 
 const WeatherIcon = styled.span`
@@ -73,7 +73,7 @@ const WeatherIcon = styled.span`
 
 const Temper = styled.h2`
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const TempIcon = styled.div`
