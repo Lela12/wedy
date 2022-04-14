@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
   #root{
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 760px;
     height: 100%;
     background: #fff;
     position: relative;
