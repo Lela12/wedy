@@ -1,47 +1,120 @@
-# Getting Started with Create React App
+# :pushpin: Wedy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 고퀄리티 개발 컨텐츠 공유 서비스  
+> https://wedy.netlify.app/
 
-## Available Scripts
+</br>
 
-In the project directory, you can run:
+## 1. 제작 기간 & 참여 인원
 
-### `npm start`
+- 2022년 4월 4일 ~ 4월 10일
+- 개인 프로젝트
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2. 사용 기술
 
-### `npm test`
+- React 18
+- Redux
+- Typescript
+- Styled-components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</br>
 
-### `npm run build`
+## 3. 주요 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 현재 날씨에 따른 옷차림 추천
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+이 서비스의 주요 기능은 날씨 OpenAPI를 이용해 날씨에 따른 옷차림 추천 기능입니다.  
+사용자는 도시를 검색하면 해당하는 도시의 현재 온도, 최고/최저 온도의 정보, 날씨에 맞는 옷차림 추천을 받게 됩니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</br>
 
-### `npm run eject`
+## 4. 핵심 트러블 슈팅
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 4.1. 비동기 처리 문제
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- open API를 사용하여 날씨를 받아와 비동기 처리로 화면에 보여줘야 했습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 하지만 리덕스에서 미들웨어 없이 비동기적인 액션 생성을 하려 하면 **에러**가 발생 했습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  <details>
+  <summary><b>에러</b></summary>
+  <div markdown="1">
 
-## Learn More
+  Uncaught Error: Actions must be plain objects. Instead, the actual type was: 'function'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+<summary><b>기존 코드</b></summary>
+<div markdown="1">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-"# wedy" 
+```javascript
+export const fetchWeatherData = (city: string) => async () => {
+  const res = await axios.get(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
+  );
+
+  return {
+    type: WEATHER_SUCESS,
+    payload: res.data,
+  };
+};
+```
+
+- 비동기 요청을 하기 위해,
+
+- 아래 **개선된 코드**와 같이 Redux-Thunk를 사용하여 액션 생성 함수를 리턴하여 특정 조건에서만 dispatch하는 것을 가능하게 해주었습니다.
+
+<details>
+<summary><b>개선된 코드</b></summary>
+<div markdown="1">
+
+```javascript
+export const fetchWeatherData =
+  (city: string) => async (dispatch: Dispatch<WeatherDispatchType>) => {
+    try {
+      const res = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
+      );
+      const { data } = res;
+
+      dispatch({
+        type: WEATHER_SUCESS,
+        payload: data,
+      });
+    } catch (err) {
+      Toast('error', '없는 도시입니다. 다시 입력 해주세요!');
+    }
+  };
+```
+
+</br>
+
+## 6. 그 외 트러블 슈팅
+
+<details>
+<summary>.env 파일의 KEY가 불러와지지 않는 오류</summary>
+<div markdown="1">
+
+- `const API_KEY = process.env.REACT_APP_API_KEY;`
+- API_KEY를 변수로 만들어서 넣어
+- `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}` 해결
+
+</div>
+</details>
+
+<details>
+<summary>Netlify 배포시 오류</summary>
+<div markdown="1">
+
+- .env파일이 gitignore로 설정이 되어 있어서 api key에 접근을 못하게 되는 문제
+- netlify에 환경변수를 설정하여 배포를 하여 해결
+
+</div>
+</details>
+    
+</br>
+
+## 6. 회고 / 느낀점
+
+> 프로젝트 개발 회고 글:
