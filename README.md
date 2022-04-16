@@ -61,6 +61,9 @@ export const fetchWeatherData = (city: string) => async () => {
 };
 ```
 
+</div>
+</details>
+
 - 비동기 요청을 하기 위해,
 
 - 아래 **개선된 코드**와 같이 Redux-Thunk를 사용하여 액션 생성 함수를 리턴하여 특정 조건에서만 dispatch하는 것을 가능하게 해주었습니다.
@@ -88,6 +91,8 @@ export const fetchWeatherData =
   };
 ```
 
+</div>
+</details>
 </br>
 
 ## 6. 그 외 트러블 슈팅
