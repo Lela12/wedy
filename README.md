@@ -1,6 +1,7 @@
 # :pushpin: Wedy
 
 > 현재 위치에 따른 날씨의 옷차림을 추천해 주는 서비스
+
 > https://wedy.netlify.app/
 
 </br>
