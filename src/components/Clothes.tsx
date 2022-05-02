@@ -9,37 +9,38 @@ interface WeatherProps {
 const Clothes: FC<WeatherProps> = ({ data }) => {
   const currentTemp = data.main.temp;
 
-  const summer = currentTemp >= 28;
-  const beginSummer = currentTemp >= 23 && currentTemp < 28;
-  const earlySummer = currentTemp >= 20 && currentTemp <= 23;
-  const earlyFall = currentTemp >= 17 && currentTemp < 20;
-  const fall = currentTemp >= 12 && currentTemp < 17;
-  const beginWinter = currentTemp >= 9 && currentTemp < 12;
-  const earlyWinter = currentTemp >= 4 && currentTemp < 9;
+  const summer = '민소매, 반바지, 원피스';
+  const beginSummer = '반팔, 얇은 셔츠, 반바지, 면바지';
+  const earlySummer = '얇은 가디건, 긴팔, 면바지, 청바지';
+  const earlyFall = '얇은 니트, 맨투맨, 가디건, 청바지';
+  const fall = '자켓, 가디건, 야상, 스타킹, 청바지, 면바지';
+  const beginWinter = '자켓, 트렌치 코트, 니트, 청바지, 스타킹';
+  const earlyWinter = '코트, 가죽자켓, 히트텍, 니트, 레깅스';
+  const winter = '패딩, 두꺼운 코트, 목도리, 기모제품';
 
   const weatherClothes = () => {
-    if (summer) {
-      return '민소매, 반바지, 원피스';
+    if (currentTemp >= 4 && currentTemp < 9) {
+      return earlyWinter;
     }
-    if (beginSummer) {
-      return '반팔, 얇은 셔츠, 반바지, 면바지';
+    if (currentTemp >= 9 && currentTemp < 12) {
+      return beginWinter;
     }
-    if (earlySummer) {
-      return '얇은 가디건, 긴팔, 면바지, 청바지';
+    if (currentTemp >= 12 && currentTemp < 17) {
+      return fall;
     }
-    if (earlyFall) {
-      return '얇은 니트, 맨투맨, 가디건, 청바지';
+    if (currentTemp >= 17 && currentTemp < 20) {
+      return earlyFall;
     }
-    if (fall) {
-      return '자켓, 가디건, 야상, 스타킹, 청바지, 면바지';
+    if (currentTemp >= 20 && currentTemp <= 23) {
+      return earlySummer;
     }
-    if (beginWinter) {
-      return '자켓, 트렌치 코트, 니트, 청바지, 스타킹';
+    if (currentTemp >= 23 && currentTemp < 28) {
+      return beginSummer;
     }
-    if (earlyWinter) {
-      return '코트, 가죽자켓, 히트텍, 니트, 레깅스';
+    if (currentTemp >= 28) {
+      return summer;
     }
-    return '패딩, 두꺼운 코트, 목도리, 기모제품';
+    return winter;
   };
 
   return (
